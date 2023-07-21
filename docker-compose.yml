@@ -1,0 +1,25 @@
+version: '3.8'
+services:
+  client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    volumes:
+      - ./client:/app
+      - /app/node_modules
+    ports:
+      - 8080:8080
+    command: ["npm", "run", "serve"]
+    environment:
+      - VUE_APP_BACKEND_URL=${VUE_APP_BACKEND_URL}
+
+  server:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    volumes:
+      - ./server:/app
+    ports:
+      - 5000:5000
+    environment:
+      - API_TOKEN=${API_TOKEN}
