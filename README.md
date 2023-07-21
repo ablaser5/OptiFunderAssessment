@@ -34,5 +34,5 @@ docker-compose up
 ## Project Notes
 1. South Station is the default stop
 2. Departed statuses will not be removed automatically. I am not sure what the rules are about this so a page refresh will take care of it
-3. The stream gets predictions and if there are no predictions, it will attempt to use schedules. Ex: if it is really late at night there won't be any departures until morning. It will show the schedule if possible.
+3. The stream gets predictions which are live updates. Does not handle schedules
  
